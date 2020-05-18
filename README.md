@@ -2,6 +2,10 @@
 
 Make life easy to select, autocomplete and run npm scripts
 
+## Screenshots
+
+<img src="https://github.com/arthur791004/ns/raw/master/assets/demo.gif" alt="ns demo" />
+
 ## Installation
 
 ```
@@ -12,7 +16,7 @@ $ yarn global add @arthur791004/ns
 $ npm install --global @arthur791004/ns
 ```
 
-## Run
+## Usage
 
 If you have already install
 
