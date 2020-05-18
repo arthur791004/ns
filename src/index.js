@@ -17,6 +17,11 @@ prompts({
     description: scripts[script],
   })),
 }).then(({ value }) => {
+  if (!scripts[value]) {
+    console.error('Oops...command could not be found');
+    return;
+  }
+
   const command = hasYarn() ? 'yarn' : 'npm';
   const args = ['run', value];
 
