@@ -1,7 +1,7 @@
 {
-  "name": "ns",
+  "name": "@arthur791004/ns",
   "version": "1.0.0",
-  "description": "Make life easy to select and autocomplete npm scripts",
+  "description": "Make life easy to select, autocomplete and run npm scripts",
   "main": "./src/index.js",
   "bin": "./bin/ns.js",
   "repository": {
@@ -13,7 +13,7 @@
   "scripts": {
     "start": "node bin/ns.js",
     "test": "echo test",
-    "release": "yarn publish"
+    "release": "yarn publish --access public"
   },
   "dependencies": {
     "cross-spawn": "7.0.2",

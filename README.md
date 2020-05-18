@@ -1,15 +1,15 @@
 # ns
 
-Make life easy to select and autocomplete npm scripts
+Make life easy to select, autocomplete and run npm scripts
 
 ## Installation
 
 ```
 # yarn
-$ yarn global add ns
+$ yarn global add @arthur791004/ns
 
 # npm
-$ npm install --global ns
+$ npm install --global @arthur791004/ns
 ```
 
 ## Run
@@ -23,5 +23,5 @@ $ ns
 If you don't want to install
 
 ```
-npm ns
+npx @arthur791004/ns
 ```
