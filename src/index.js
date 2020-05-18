@@ -12,6 +12,7 @@ prompts({
   type: 'autocomplete',
   name: 'value',
   message: 'Pick npm script',
+  fallback: 'No npm script found',
   choices: Object.keys(scripts).map((script) => ({
     title: script,
     description: scripts[script],
