@@ -39,10 +39,6 @@ function getPkgScripts() {
 }
 
 function hasYarn() {
-  try {
-    spawn.sync('yarnpkg', ['--version'], { stdio: 'ignore' });
-    return true;
-  } catch (e) {
-    return false;
-  }
+  const { error } = spawn.sync('yarnpkg', ['--version'], { stdio: 'ignore' });
+  return error === null ? true : false;
 }
