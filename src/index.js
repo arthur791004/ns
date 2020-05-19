@@ -44,7 +44,20 @@ function getPkgScripts() {
   }
 }
 
+/**
+ * @description check yarn install and yarn.lock exists or not
+ */
 function hasYarn() {
   const { error } = spawn.sync('yarnpkg', ['--version'], { stdio: 'ignore' });
-  return error === null ? true : false;
+  if (error) {
+    return false;
+  }
+
+  try {
+    const yarnLockPath = path.resolve(process.cwd(), 'yarn.lock');
+    fs.statSync(yarnLockPath);
+    return true;
+  } catch {
+    return false;
+  }
 }
