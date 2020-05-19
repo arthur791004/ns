@@ -1,6 +1,12 @@
 const path = require('path');
 const spawn = require('cross-spawn');
 const prompts = require('prompts');
+const { Command } = require('commander');
+
+const program = new Command('ns')
+  .option('--detail', 'print detail of script')
+  .option('--use-npm', 'use npm to run script')
+  .parse(process.argv);
 
 const scripts = getPkgScripts();
 if (!scripts || Object.keys(scripts).length === 0) {
@@ -15,7 +21,7 @@ prompts({
   fallback: 'No npm script found',
   choices: Object.keys(scripts).map((script) => ({
     title: script,
-    description: scripts[script],
+    description: program.detail && scripts[script],
   })),
 }).then(({ value }) => {
   if (!scripts[value]) {
@@ -23,7 +29,7 @@ prompts({
     return;
   }
 
-  const command = hasYarn() ? 'yarn' : 'npm';
+  const command = program.useNpm || !hasYarn() ? 'npm' : 'yarn';
   const args = ['run', value];
 
   spawn(command, args, { stdio: 'inherit' });
