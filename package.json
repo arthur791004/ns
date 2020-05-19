@@ -1,6 +1,6 @@
 {
   "name": "@arthur791004/ns",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Make life easy to select, autocomplete and run npm scripts",
   "main": "./src/index.js",
   "bin": "./bin/ns.js",
