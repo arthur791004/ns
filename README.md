@@ -8,7 +8,7 @@ Make life easy to select, autocomplete and run npm scripts
 
 ## Installation
 
-```
+```bash
 # yarn
 $ yarn global add @arthur791004/ns
 
@@ -18,14 +18,23 @@ $ npm install --global @arthur791004/ns
 
 ## Usage
 
-If you have already install
+### Run with Installation
 
-```
+```bash
 $ ns
 ```
 
+Note that `ns` would load `.env` automatically, so you could add environment variables into it
+
+### Run without Installation
+
 If you don't want to install
 
-```
+```bash
 npx @arthur791004/ns
 ```
+
+## Options
+
+- `--detail` - print detail of script
+- `--use-npm` - use npm to run script

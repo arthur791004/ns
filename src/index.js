@@ -1,4 +1,5 @@
 const path = require('path');
+const { config } = require('dotenv');
 const spawn = require('cross-spawn');
 const prompts = require('prompts');
 const { Command } = require('commander');
@@ -32,7 +33,12 @@ prompts({
   const command = program.useNpm || !hasYarn() ? 'npm' : 'yarn';
   const args = ['run', value];
 
-  spawn(command, args, { stdio: 'inherit' });
+  /**
+   * Load environment variables from .env
+   */
+  config();
+
+  spawn(command, args, { stdio: 'inherit', env: process.env });
 });
 
 function getPkgScripts() {
